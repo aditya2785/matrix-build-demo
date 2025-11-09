@@ -8,8 +8,7 @@ jobs:
   build:
     strategy:
       matrix:
-        python-version: [3.9, 3.10, 3.11]  # 3 variants
-
+        python-version: [3.9, 3.10, 3.11]  # ✅ 3 versions = 3 jobs
     runs-on: ubuntu-latest
 
     steps:
