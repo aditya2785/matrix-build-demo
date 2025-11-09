@@ -6,9 +6,11 @@ on:
 
 jobs:
   build:
+    # matrix will create 3 parallel jobs
     strategy:
       matrix:
-        python-version: [3.9, 3.10, 3.11]  # ✅ 3 versions = 3 jobs
+        python-version: ['3.9', '3.10', '3.11']
+
     runs-on: ubuntu-latest
 
     steps:
@@ -16,7 +18,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: matrix-206ad00
-        run: echo "Building for Python ${{ matrix.python-version }}"
+        run: echo "Building for Python version ${{ matrix.python-version }}"
 
       - name: Setup Python
         uses: actions/setup-python@v5
